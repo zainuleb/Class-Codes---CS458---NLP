@@ -3,3 +3,9 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
+corpus = open('Movies_TV.txt').read()
+data = corpus.split('\n')
+data.remove(data[0])
+
+data.remove(data[-1])
+#data
