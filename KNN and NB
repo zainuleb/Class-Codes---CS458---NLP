@@ -9,3 +9,9 @@ data.remove(data[0])
 
 data.remove(data[-1])
 #data
+
+X, y = [], []
+for row in data:
+    _, label, _, review = row.split('\t')
+    X.append(review)
+    y.append(label)
