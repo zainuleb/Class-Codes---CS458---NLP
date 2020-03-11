@@ -15,3 +15,15 @@ for row in data:
     _, label, _, review = row.split('\t')
     X.append(review)
     y.append(label)
+
+from sklearn.feature_extraction.text import TfidfVectorizer
+vectorizer = TfidfVectorizer()
+
+matrix_X = vectorizer.fit_transform(X)
+
+train_x, test_x, train_y, test_y = train_test_split(matrix_X, y, shuffle=True, train_size = 0.7)
+
+knn = KNeighborsClassifier()
+nbc = MultinomialNB()
+knn.fit(train_x, train_y)
+nbc.fit(train_x, train_y)
