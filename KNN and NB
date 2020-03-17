@@ -27,3 +27,6 @@ knn = KNeighborsClassifier()
 nbc = MultinomialNB()
 knn.fit(train_x, train_y)
 nbc.fit(train_x, train_y)
+
+labels_knn = knn.predict(test_x)
+labels_nbc = nbc.predict(test_x)
